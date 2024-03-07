@@ -10,7 +10,12 @@ My name's Jacob, I prefer Jake though.
 I enjoy Music, Games, Drawing, AI, Designing and most importantly Dragons!
 
 &nbsp;
-### A good luck image can be found below!
+## Calendar
+![Calendar image](100%20Day%20Calendar.png)
+
+&nbsp;
+### A good luck dragon for the journey!
+Psst... we call him Dexter.
 ![Dexter Dragon Plush](images/dexter.jpg)
 
 
