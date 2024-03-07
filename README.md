@@ -11,7 +11,7 @@ I enjoy Music, Games, Drawing, AI, Designing and most importantly Dragons!
 
 &nbsp;
 ### A good luck image can be found below!
-![Dexter Dragon Plush](images/dexter.png)
+![Dexter Dragon Plush](images/dexter.jpg)
 
 
 
