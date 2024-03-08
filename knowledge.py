@@ -39,7 +39,7 @@ randint(1,2) # 1 or 2
 
 #===============================================================
 
-#Interpolation Operator (string formatting), line shift and duplication, manual fold
+#Interpolation Operator (string formatting), line shift and duplication, manual fold, rounding float
 #Day02
 #===============================================================
 
@@ -71,4 +71,16 @@ print('%(language)s has %(number)03d quote types.' % {'language': "Python", "num
 #(CTRL + K) -> (CTRL + ,) - Adds fold for selected region
 #(CTRL + K) -> (CTRL + .) - Removes folds throughout selected region
 
-    
+#===============================================================
+
+#4 - ROUND FLOAT DOWN TO INTEGER
+num = 8 / 3 # = 2.6666666667 (float)
+round(num, 3) # = 2.667
+
+num = 8//3 # = 2 (int)
+
+#note that below is apparently a float (could easily be used as int though since python is so dynamic at casting data types)
+num = 4 / 2
+
+#===============================================================
+
