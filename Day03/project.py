@@ -8,7 +8,7 @@ The goal of this project is to create a pathway based text adventure using condi
 
 def decision(choices, prompt):
     # full_prompt == f"\n{prompt} Type \"{choice1}\" or \"{choice2}\". "
-    full_prompt = prompt + " Type "
+    full_prompt = "\n" + prompt + " Type "
     selection = '"' + choices[0] + '"'
 
     for choice in choices[1:]:
@@ -48,8 +48,26 @@ if choice == "right":
     print("Fall into a hole.\nGame Over.")
     quit()
 
-choice = decision(("wait", "swim", "jump in"), "You've come to a lake. There is an island in the middle of the lake.\nDo you wait for a boat or swim across?")
+choice = decision(("wait", "swim",), "You've come to a lake. There is an island in the middle of the lake.\nDo you wait for a boat or swim across?")
 if not choice == "wait":
     print("Attack by trout.\nGame Over.")
     quit()
-else: print("Hurry, Dex greets you on the other side.")
+
+choice = decision(("red", "blue", "yellow"), "You arrive at the island unharmed. There is a house with 3 doors.\nOne red, one yellow and one blue. Which colour do you choose?")
+if choice == "red":
+    print("Burned by fire.\nGame Over.")
+elif choice == "blue":
+    print("Eaten by beasts.\nGame Over.")
+else:
+    print("You Win!")
+    print('''
+.                 _                                          
+.               _(_)_                          wWWWw   _     
+.   @@@@       (_)@(_)   vVVVv     _     @@@@  (___) _(_)_   
+.  @@()@@ wWWWw  (_)\    (___)   _(_)_  @@()@@   Y  (_)@(_)  
+.   @@@@  (___)     `|/    Y    (_)@(_)  @@@@   \|/   (_)\   
+.    /      Y       \|    \|/    /(_)    \|      |/      |   
+. \ |     \ |/       | / \ | /  \|/       |/    \|      \|/  
+.   |//   \\\\|///  \\\\\|//\\\\\|/// \|///  \\\\\|//  \\\\|//  \\\\\|// 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          
+''')
