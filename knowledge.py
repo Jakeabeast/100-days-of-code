@@ -5,7 +5,7 @@ I will use folding to fold up each day with a summary of what there is within th
 
 '''
 
-#Instant Variable Swap, Code Intelligence, Reuse specific function from imported library, Aliasing Library
+#Instant Variable Swap, Code Intelligence, Reuse specific function from imported library, Aliasing library
 #Day01
 #===============================================================
 
@@ -83,4 +83,54 @@ num = 8//3 # = 2 (int)
 num = 4 / 2
 
 #===============================================================
+
+#Tenary Operator (conditional statement with result), ASCCI art, Commenting shortcut
+#Day03
+
+#===============================================================
+
+#1 - TERNARY OPERATOR
+num = 5
+result = "even" if num % 2 == 0 else "odd" #stores "even" or "odd" in result
+
+print ("Both a and b are equal" if a == b else "a is greater than b"
+        if a > b else "b is greater than a") #for multiple conditions (no elif)
+
+a, b = 7, 4
+print ((a,"is greater.") if a > b else (b,"is greater!"))
+
+#===============================================================
+
+#2 - ASCII ART
+#https://ascii.co.uk/art
+
+print("""                       /|                 |\
+                      / | ___.--~~~--.___ | \
+ ...--=.._           /  ~~___~\_   _/~___~~  \        _..=--...
+~   .-=_)/==._     _ \ .(~  o~-.\ /.-~o  ~). / _  _.==\(_=-.   ~~-._
+  _/.-  /         / \/\_ ~---~_-=V=-_~---~ _/\/ \      \  -.\_      -
+ /_/  ./          \/\_-_~~v-/~o~) (~o~\-v~~_-_/\/       \.  \_\      ~
+//    |          _-=___==/(__         __)\==___=-_       |    \\\
+ ))    \          _/ _ \ X___---===---___X / _ \_       /    (( ))\
+\ \_   |         /_\/_\ (( \| ` ` ' ' |/ )) /_\/_\      |   _/ /|  \
+ \  \   \       ~~  / _ /\\ V  /~V~)  V //\ _ \  ~~    /   /  / |   \
+  \_ \  |           \/ \\ \\^  \ )/   ^//|// \/        |  / _/  |    \
+    \ \  \               '/\\^  )/   ^// |`           /  / /     |
+     \ \_ |             '| (\\^ V   ^//  |`          | _/ /      |
+      \  \\             '/(~~\`-___-'/) /`           //  /       |
+       \_ \\ /|        '|(~~~-\_   _/)  |`          |\ _/        |
+         \_/~~~~-.     '/(~~~---===~~)  |`      .-~~~~~\_       |
+._      _/   _    \   '|(~~~-----~~~)  /`      /     _   \_ .-. | _._
+  \    // / /\\~)  \  '|(~~~-----~~~)  |`     /   (~//\ \ \X   \|/   \
+------/ \ \ )--=====----=====------------=====-----===-\_) \\---------
+      \ (\_)\                                            /\_)\
+       \_)\                                                /\_)
+        \                                                    /""")
+
+#==============================================================
+
+#3 - Comment Out shortcut
+# select multiple lines and use (CTRL + /) to comment them in or out
+
+#==============================================================
 
