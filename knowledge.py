@@ -5,7 +5,7 @@ I will use folding to fold up each day with a summary of what there is within th
 
 '''
 
-#Instant Variable Swap, Code Intelligence, Reuse specific function from imported library, Aliasing library
+#Instant variable swap | Code intelligence | Reuse specific function from imported library | Aliasing library
 #Day01
 #===============================================================
 
@@ -39,7 +39,7 @@ randint(1,2) # 1 or 2
 
 #===============================================================
 
-#Interpolation Operator (string formatting), line shift and duplication, manual fold, rounding float
+#Interpolation operator (string formatting)| Line shift and duplication | Manual fold | Rounding float
 #Day02
 #===============================================================
 
@@ -84,7 +84,7 @@ num = 4 / 2
 
 #===============================================================
 
-#Tenary Operator (conditional statement with result), ASCCI art, Commenting shortcut
+#Tenary operator (conditional statement with result), ASCCI art, Commenting shortcut
 #Day03
 
 #===============================================================
@@ -133,4 +133,56 @@ print("""                       /|                 |\
 # select multiple lines and use (CTRL + /) to comment them in or out
 
 #==============================================================
+
+
+#Split string function | Find index of specific element | Random choice from list of items | Parsing random functions as object arguments 
+#Day04
+
+#===============================================================
+
+#1 - SPLIT FUNCTION
+
+str = "Angela, Ben, Jenny, Michael, Chloe"
+names = str.split(", ") #list of names
+
+#we can split a string with a custom seperator (", ")
+
+#===============================================================
+
+#2 - FIRST ELEMENT INDEX
+
+letters = ['A', 'B', 'B', 'A']
+posA = letters.index('A') #return index 0
+
+#===============================================================
+
+#3 - RANDOM FROM LIST
+
+chosen_list = {"rock", "paper", "scissors"}
+rand = random.randint(1,3)
+result = "rock" if rand == 1 else "paper" if rand == 2 else "scissors"
+#instead
+result = random.choice(chosen_list)
+
+#===============================================================
+
+#4 - PARSING FUNCTION OBJECTS AS ARGUMENTS
+def AI_selection():
+    return random.choice(chosen_list)
+def Bias_AI_selection():
+    return "scissors"
+
+
+def update(function):
+    return function()
+
+update(AI_selection) #choosen function (AI_selection) will be called as (function()) in update function
+update(Bias_AI_selection) #or even Bias
+
+#FUTHERMORE - We can parse random functions within a list for varying behaviours
+
+func_list = [AI_selection, Bias_AI_selection]
+update(func_list(random.randint(0,1))) #store functions as objects then randomly select function to use in update
+
+#===============================================================
 
