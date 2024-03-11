@@ -186,3 +186,46 @@ update(func_list(random.randint(0,1))) #store functions as objects then randomly
 
 #===============================================================
 
+#Range without idx | Unique random values from list | Line/code structure maniuplation | Convert list to string
+#Day05
+
+#========================================================
+
+#1 - RANGE LOOP WITHOUT IDX
+
+#normally
+for x in range(1, 11):
+    print("blah") #wastes storage of x (not needed)
+
+#instead
+    for _ in range(1,11):
+        print("yaay") #underscore bleeps out x when not needed
+
+#========================================================
+  
+#2 - UNIQUE RANDOM VALUES FROM LIST
+
+list = ["apple", "banana", "cherry", "Mango"]
+random_unique = random.sample(list, 3) #random list of 3 fruits (never does apple twice)
+
+#========================================================
+
+#3 - LINE/CODE STRUCTURE MANIPULATION
+
+list = ["apple" , "banana" \
+        "cherry", "Mango"] #Use (\) to continue line below
+
+num1 = 7; num2 = 27 #use (;) to use same line for multple things.
+
+#========================================================
+
+#4 - CONVERT LIST TO STRING
+
+list = ["apple", "banana", "cherry", "Mango"]
+print(', '.join(list)) #"apple, banana,..."
+
+#========================================================
+
+#...
+#Day06
+
