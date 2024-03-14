@@ -1,3 +1,12 @@
+'''
+DAY 7 PROJECT - Hangman
+
+The goal of this project is to recreate the game hangman. 
+I decided to try take an OOP approach and use my knowledge to implement a simple game loop [input -> update -> render]
+'''
+
+#=========================================================================
+
 import random
 import hangman_words
 from hangman_art import logo, stages

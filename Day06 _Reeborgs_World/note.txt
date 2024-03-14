@@ -1,0 +1,47 @@
+Today was creating a maze solving algorithm on another platform.
+The site is called Reeborg's World: https://reeborg.ca/index_en.html  
+
+The problem involved spawning in a mave on a random tile in a random direction.
+The algorithm solution I created involved following the edge of the right wall making sure to initally move till touching any wall (else might result in infinite loop)
+
+If you want to follow along:
+- paste in the link above
+- click a site link that directs you to the coding problems
+- look for 'Maze' in top left
+- paste solution below (some definitions below are predetermined on the site [e.g turn_left()])
+
+def turn_right():
+    for _ in range(3):
+        turn_left()
+        
+def left_is_clear():
+    turn_left(); turn_left()
+    clear = right_is_clear()
+    turn_left(); turn_left()
+    return clear
+
+#make sure we spawn next to wall
+while front_is_clear():
+    move()
+#orientate self so a wall is to our right
+while right_is_clear():
+    turn_left()
+
+#begin algorithm loop
+while not at_goal():
+    #Can you move right?
+    if right_is_clear():
+        turn_right()
+        move()
+    #Can you move forward?
+    elif front_is_clear():
+        move()
+    #Can you move left?
+    elif left_is_clear():
+        turn_left()
+        move()
+    #Reverse!
+    else:
+        turn_left(); turn_left()
+        move()
+    
