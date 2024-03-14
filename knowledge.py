@@ -226,6 +226,25 @@ print(', '.join(list)) #"apple, banana,..."
 
 #========================================================
 
-#...
+#Importing libraries | Clearing terminal screen using OS
 #Day06
+#========================================================
 
+#1 - IMPORTING
+
+#We can import multiple specific items on the same line. Also . to travel through relative folder path.
+from Day06.hangman_art import logo, stages
+
+#========================================================
+
+# 2 - CLEAR SCREEN USING OS 
+
+import os
+def clear():
+    #opens the SHELL of the respective Operating System and executes the command 'clr'
+    os.system('clr')
+
+#========================================================
+    
+#...
+#Day07
