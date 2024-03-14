@@ -75,12 +75,18 @@ print('%(language)s has %(number)03d quote types.' % {'language': "Python", "num
 
 #4 - ROUND FLOAT DOWN TO INTEGER
 num = 8 / 3 # = 2.6666666667 (float)
+
+#--- USE THIS FOR NORMAL ROUNDING ---#
+round(num) # = 3 
 round(num, 3) # = 2.667
 
-num = 8//3 # = 2 (int)
+#--- USE THIS FOR ALWAYS ROUNDING DOWN ---#
+num//1 # = 2 (int) # Using // simply divdeds by number then ignores all decimals (2.667/1 -> 2.0) or (8//3 -> 2)
 
-#note that below is apparently a float (could easily be used as int though since python is so dynamic at casting data types)
-num = 4 / 2
+#--- ALTENATIVELY USE FLOOR AND CEIL ---#
+from math import floor, ceil
+floor(num)
+ceil(num) #rounded_up_answer = num//1 if num % 1 == 0 else (num + 1)//1 [solution without math library]
 
 #===============================================================
 
@@ -141,7 +147,6 @@ print("""                       /|                 |\
 #===============================================================
 
 #1 - SPLIT FUNCTION
-
 str = "Angela, Ben, Jenny, Michael, Chloe"
 names = str.split(", ") #list of names
 
@@ -150,14 +155,12 @@ names = str.split(", ") #list of names
 #===============================================================
 
 #2 - FIRST ELEMENT INDEX
-
 letters = ['A', 'B', 'B', 'A']
 posA = letters.index('A') #return index 0
 
 #===============================================================
 
 #3 - RANDOM FROM LIST
-
 chosen_list = {"rock", "paper", "scissors"}
 rand = random.randint(1,3)
 result = "rock" if rand == 1 else "paper" if rand == 2 else "scissors"
@@ -192,7 +195,6 @@ update(func_list(random.randint(0,1))) #store functions as objects then randomly
 #========================================================
 
 #1 - RANGE LOOP WITHOUT IDX
-
 #normally
 for x in range(1, 11):
     print("blah") #wastes storage of x (not needed)
@@ -204,14 +206,12 @@ for x in range(1, 11):
 #========================================================
   
 #2 - UNIQUE RANDOM VALUES FROM LIST
-
 list = ["apple", "banana", "cherry", "Mango"]
 random_unique = random.sample(list, 3) #random list of 3 fruits (never does apple twice)
 
 #========================================================
 
 #3 - LINE/CODE STRUCTURE MANIPULATION
-
 list = ["apple" , "banana" \
         "cherry", "Mango"] #Use (\) to continue line below
 
@@ -220,7 +220,6 @@ num1 = 7; num2 = 27 #use (;) to use same line for multple things.
 #========================================================
 
 #4 - CONVERT LIST TO STRING
-
 list = ["apple", "banana", "cherry", "Mango"]
 print(', '.join(list)) #"apple, banana,..."
 
@@ -231,9 +230,8 @@ print(', '.join(list)) #"apple, banana,..."
 #========================================================
 
 #1 - IMPORTING
-
 #We can import multiple specific items on the same line. Also . to travel through relative folder path.
-from Day06.hangman_art import logo, stages
+from Day07_Hangman.hangman_art import logo, stages
 
 #========================================================
 
@@ -246,5 +244,8 @@ def clear():
 
 #========================================================
     
-#...
+#Nothing
 #Day08
+
+#...
+#Day09
