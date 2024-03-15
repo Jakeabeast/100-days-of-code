@@ -239,13 +239,39 @@ from Day07_Hangman.hangman_art import logo, stages
 
 import os
 def clear():
-    #opens the SHELL of the respective Operating System and executes the command 'clr'
-    os.system('clr')
+    #opens the SHELL of the respective Operating System and executes the command 'cls'
+    os.system('cls')
 
 #========================================================
     
 #Nothing
 #Day08
 
-#...
+#User writes function using eval() | Get key of highest value from dictionary
 #Day09
+    
+#========================================================
+
+#1 - USING EVAL() FOR USER FUNCTION INPUT
+    
+#Allows for user input to use functions and evaluates those functions
+x = 1
+input = "x + 1" #string
+print(eval(input)) # >> 2    
+
+#Be careful using in big projects however as without proper restriction, it can be used to access os commands
+#https://www.programiz.com/python-programming/methods/built-in/eval [read for more info]
+
+#========================================================
+
+#2 - GET KEY OF HIGHEST VALUE FROM DICTIONARY 
+dict = {'a' : 3, 'b' : 7, 'c' : 2}
+
+key = max(dict, key=dict.get)
+# stats = {1: 2}
+# func = stats.get  # Not called
+# funct(1) >> stats.get(1) hence below...
+# print(func(1))  # Prints 2
+#https://www.reddit.com/r/pythonhelp/comments/xn5b8n/why_is_this_working_getting_key_of_max_value_from/ 
+
+#========================================================
