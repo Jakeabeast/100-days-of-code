@@ -6,24 +6,25 @@ DAY 10 PROJECT - Calculator
 The goal of this project is to use create a calculator where the user can use an operation one step at a time. 
 For this project and hopefully onwards, I wont to try dedicating more commits to smaller chunks of code.
 This should help make it more clear what has been done and prepares me for future version control princples. 
+P.S I feel I may have made unnecessary implementations such as using individual functions for basic operations ):
 '''
 
 class Calculator():
 
-    def __init__():
-        pass
+    def __init__(self):
+        self.current_result = "0"
 
-    def __add():
-        pass
+    def __add(self, number):
+        return self.current_result + number
 
-    def __subtract():
-        pass
+    def __subtract(self, number):
+        return self.current_result - number
 
-    def __multiply():
-        pass
+    def __multiply(self, number):
+        return self.current_result * number
 
-    def __divide():
-        pass
+    def __divide(self, number):
+        return self.current_result / number
 
     def input():
         pass
