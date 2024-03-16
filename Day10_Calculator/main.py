@@ -1,4 +1,5 @@
 from art import logo
+from os import system
 
 '''
 DAY 10 PROJECT - Calculator
@@ -9,63 +10,54 @@ This should help make it more clear what has been done and prepares me for futur
 P.S I feel I may have made unnecessary implementations such as using individual functions for basic operations ):
 '''
 
-class Calculator():
+def add(n1, n2):
+    return n1 + n2
 
-    def __init__(self):
-        self.calculating = True
-        self.current_result = None
-        self.operation = None
-        self.number = None
-        
+def subtract(n1, n2):
+    return n1 - n2
 
-        self.options = { '+' : self.__add,
-                         '-' : self.__subtract,
-                         '*' : self.__multiply,
-                         '/' : self.__divide }
-        print(logo)
+def multiply(n1, n2):
+    return n1 * n2
 
-    def __add(self, number):
-        return self.current_result + number
+def divide(n1, n2):
+    return n1 / n2
 
-    def __subtract(self, number):
-        return self.current_result - number
-
-    def __multiply(self, number):
-        return self.current_result * number
-
-    def __divide(self, number):
-        return self.current_result / number
-    
-    def __reset(self):
-        from time import sleep
-        from os import system
-        self.current_result = None
-        print("Resetting.")
-        sleep(1)
-        system('cls')
-        print(logo)
-
-
-    def input(self):
-        if self.current_result == None:
-            self.current_result = input("What's the first number: ")
-            for symbol in self.options:
-                print(symbol)            
-
-        self.operation = input("Pick and operation: ")
-        self.number = input("Pick the next number: ")
-
-    def update(self):
-        pass
-
-
+operations = { '+' : add,
+               '-' : subtract,
+               '*' : multiply,
+               '/' : divide }
 
 
 if __name__ == "__main__":
-    calc = Calculator()
+    exit = False
+    while not exit:
+        print(logo)
+        result = float(input("What's the first number?: "))
+        for symbol in operations:
+            print(symbol)
+        bing = True
+        while bing == True:
+            action = input("What's the operation?: ").strip()
+            number = float(input("What's the next number?: "))
 
-    while calc.calculating == True:
-        calc.input()
-        calc.update()
+            new_result = operations[action](result, number)
+            print(result, action, number, "=", new_result)   
 
-    print("Goodbye")
+            reoccur = None
+            while reoccur == None:
+                reoccur = input(f"Type \"y\" to continue calculating with {result}, type \"n\" to clear, or \"exit\" to close calculator: ").lower()
+                
+                if reoccur == 'y':
+                    result = new_result
+                    bing = True
+                elif reoccur == 'n': 
+                    bing = False
+                    system('cls')
+                elif reoccur == 'exit':
+                    bing = False
+                    exit = True
+                else:
+                    print(f"You cannot choose 'reoccur'.")
+                    reoccur = None
+            
+    print("Goodbye.")
