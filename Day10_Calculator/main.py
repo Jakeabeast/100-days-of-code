@@ -14,6 +14,8 @@ class Calculator():
     def __init__(self):
         self.current_result = "0"
 
+        self.output()
+
     def __add(self, number):
         return self.current_result + number
 
@@ -25,6 +27,15 @@ class Calculator():
 
     def __divide(self, number):
         return self.current_result / number
+    
+    def __reset(self):
+        from time import sleep
+        from os import system
+        self.current_result = None
+        print("Resetting.")
+        sleep(1)
+        system('cls')
+
 
     def input():
         pass
