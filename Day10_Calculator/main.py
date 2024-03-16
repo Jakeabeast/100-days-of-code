@@ -12,9 +12,17 @@ P.S I feel I may have made unnecessary implementations such as using individual 
 class Calculator():
 
     def __init__(self):
-        self.current_result = "0"
+        self.calculating = True
+        self.current_result = None
+        self.operation = None
+        self.number = None
+        
 
-        self.output()
+        self.options = { '+' : self.__add,
+                         '-' : self.__subtract,
+                         '*' : self.__multiply,
+                         '/' : self.__divide }
+        print(logo)
 
     def __add(self, number):
         return self.current_result + number
@@ -35,16 +43,22 @@ class Calculator():
         print("Resetting.")
         sleep(1)
         system('cls')
+        print(logo)
 
 
-    def input():
+    def input(self):
+        if self.current_result == None:
+            self.current_result = input("What's the first number: ")
+            for symbol in self.options:
+                print(symbol)            
+
+        self.operation = input("Pick and operation: ")
+        self.number = input("Pick the next number: ")
+
+    def update(self):
         pass
 
-    def update():
-        pass
-    
-    def output():
-        pass
+
 
 
 if __name__ == "__main__":
@@ -53,6 +67,5 @@ if __name__ == "__main__":
     while calc.calculating == True:
         calc.input()
         calc.update()
-        calc.output()
 
     print("Goodbye")
