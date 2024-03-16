@@ -225,6 +225,9 @@ print(', '.join(list)) #"apple, banana,..."
 
 #========================================================
 
+#Nothing
+#Day06
+
 #Importing libraries | Clearing terminal screen using OS
 #Day07
 #========================================================
@@ -273,5 +276,27 @@ key = max(dict, key=dict.get)
 # funct(1) >> stats.get(1) hence below...
 # print(func(1))  # Prints 2
 #https://www.reddit.com/r/pythonhelp/comments/xn5b8n/why_is_this_working_getting_key_of_max_value_from/ 
+
+#========================================================
+
+#...
+#Day10
+
+#========================================================
+
+#1 -  CONVERT STRING TO TITLE CASE
+
+name = input("Enter name: ")
+print(name.title())
+
+#========================================================
+
+#2 - RETURN MULTIPLE VALUES
+
+
+def func():
+    x=3; y="Dex"
+    return x, y #returns tuple of x, y (3, "Dex")
+num, name = func() #num = 3, name = "Dex"
 
 #========================================================
