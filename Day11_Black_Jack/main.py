@@ -1,3 +1,13 @@
+'''
+DAY 11 PROJECT - BlackJack
+
+The goal of this project is to use create the game BlackJack
+This is one of the big projects and may not be perfect. 
+I went ahead and created ASCII art of all 11 values (just diamond suit as suit is irrelevant)
+
+Note: There is still a bug if you draw 2 aces and sit, you win with a score of 22 lmao
+'''
+
 import card_art
 import random
 from enum import Enum
@@ -22,6 +32,8 @@ class BlackJack():
         self.player_hand_value = [] #fills with values [4,  10,  11]
         self.dealer_cards = []
         self.dealer_hand_value = []
+        
+        self.aces_converted = 0
 
         self.game_over = False
         self.new_card = None
@@ -60,20 +72,23 @@ class BlackJack():
 
     def __complete_dealers_hand(self):
         score = sum(self.dealer_hand_value)
+        self.aces_converted = 0
         while score < 17:
             drawn_card = random.choice(self.deck)
             self.dealer_cards.append(drawn_card)
             self.dealer_hand_value.append((self.value_art[drawn_card])[0])
             score += self.value_art[drawn_card][0]
             if score > 21:
-                if 'A' in self.dealer_cards:
+                if self.dealer_cards.count('A') > self.aces_converted:
+                    self.aces_converted += 1
                     self.dealer_hand_value[self.dealer_hand_value.index(11)] = 1
                     score -= 10
+                    
 
     def input(self):
         from os import system
         self.new_card = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-        #system('cls')
+        system('cls')
 
     def update(self):
         if not self.__valid_input():
@@ -90,8 +105,10 @@ class BlackJack():
             
         score = sum(self.player_hand_value)
         if score > 21:
-            if 'A' in self.player_cards:
-                self.player_hand_value[self.player_hand_value.index(11)] = 1
+            if self.player_cards.count('A') > self.aces_converted:
+                tmp = self.player_hand_value.index(11)
+                self.player_hand_value[tmp] = 1
+                self.aces_converted += 1
             else:
                 self.state = self.GameStates.STOP_DRAWING
                 self.game_over = True
@@ -117,6 +134,12 @@ class BlackJack():
             if self.game_over:
                 print("You were too greedy. Game Over.")
                 print("DEALER WINS!")
+
+            elif sum(self.player_hand_value) == 21 and len(self.player_cards) == 2:
+                print("    wait...")
+                print("YOU SCORED BLACKJACK, WELL DONE!")
+                print("PLAYER WINS!")
+
             else:
                 print(f"    Dealers final hand is: {self.dealer_cards}")
                 dealer = sum(self.dealer_hand_value)
@@ -128,15 +151,17 @@ class BlackJack():
                 else:
                     from time import sleep; sleep(2)
                     print(f"DEALER score: {dealer}, PLAYER score: {player}")
-
-                    if dealer > player:
+                    
+                    if player == 22:
+                        print("YOU FOUND THE RARE DOUBLE ACE BUG... i lose ):")
+                    elif dealer > player:
                         print("DEALER WINS!")
                     elif player > dealer:
                         print("PLAYER WINS!")
                     else:
                         print("ITS A DRAW")
                 
-                self.game_over = True
+            self.game_over = True
                 
 
 if __name__ == "__main__":
