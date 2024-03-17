@@ -300,7 +300,7 @@ num, name = func() #num = 3, name = "Dex"
 
 #========================================================
 
-#Condition needing at least one value
+#Condition needing at least one value | Sum values in list | How many times element reappears in list | Change instance of element x in list
 #Day11
 
 #========================================================
@@ -317,6 +317,26 @@ if any([answer=='a', answer=='b', answer=='c']):
     print("this also works and can check multiple variables against multiple answers")
 
 #========================================================
+
+#2 - SUM VALUES IN LIST
+list = [2, 4, 5]
+sum(list) # 2+4+5 = 11
+
+#========================================================
+
+#3 - HOW MANY TIMES DOES ELEMENT REAPPEAR IN LIST
+list = ['A', 'A', '4', 'J', 'A']
+list.count('A') #3
+
+#========================================================
+
+#4 - CHANGE INSTANCE OF ELEMENT_X IN LIST
+cards = ['A', 'A', '4', 'J', 'A']
+cards[cards.index('A')] = 'K' #cards = ['K', 'A', '4', 'J', 'A'] run it again for ['K', 'K', '4', 'J', 'A']
+
+#To change all instances
+cards = list(map(lambda x: x.replace('A', 'K'), cards)) #cards = ['K', 'K', '4', 'J', 'K']
+
 
 #...
 #Day12
