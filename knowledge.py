@@ -279,7 +279,7 @@ key = max(dict, key=dict.get)
 
 #========================================================
 
-#...
+#Title case strings | Return multiple values
 #Day10
 
 #========================================================
@@ -293,10 +293,32 @@ print(name.title())
 
 #2 - RETURN MULTIPLE VALUES
 
-
 def func():
     x=3; y="Dex"
     return x, y #returns tuple of x, y (3, "Dex")
 num, name = func() #num = 3, name = "Dex"
 
 #========================================================
+
+#Condition needing at least one value
+#Day11
+
+#========================================================
+
+#1 - CONDITION NEEDING AT LEAST 1 VALUE
+
+answer = input("Type 'a' or 'b' or 'c'.").lower()
+if answer in ('a','b','c'):  #as long as answer is in the tuple (a,b,c)
+    print("thanks")
+else:
+    print(":(")
+
+if any([answer=='a', answer=='b', answer=='c']):
+    print("this also works and can check multiple variables against multiple answers")
+
+#========================================================
+
+#...
+#Day12
+    
+    
