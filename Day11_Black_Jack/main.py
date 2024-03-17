@@ -58,11 +58,22 @@ class BlackJack():
             print(f"'{self.new_card}' is not a valid response.")
             return False
 
+    def __complete_dealers_hand(self):
+        score = sum(self.dealer_hand_value)
+        while score < 17:
+            drawn_card = random.choice(self.deck)
+            self.dealer_cards.append(drawn_card)
+            self.dealer_hand_value.append((self.value_art[drawn_card])[0])
+            score += self.value_art[drawn_card][0]
+            if score > 21:
+                if 'A' in self.dealer_cards:
+                    self.dealer_hand_value[self.dealer_hand_value.index(11)] = 1
+                    score -= 10
 
     def input(self):
         from os import system
         self.new_card = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-        system('cls')
+        #system('cls')
 
     def update(self):
         if not self.__valid_input():
@@ -71,9 +82,10 @@ class BlackJack():
             if self.new_card == 'y':
                 drawn_card = random.choice(self.deck)
                 self.player_cards.append(drawn_card)
-                self.player_hand_value.append((self.value_art[drawn_card])[0]) #*** may be error here
+                self.player_hand_value.append((self.value_art[drawn_card])[0])
             else:
                 self.state = self.GameStates.STOP_DRAWING
+                self.__complete_dealers_hand()
                 return
             
         score = sum(self.player_hand_value)
@@ -81,6 +93,7 @@ class BlackJack():
             if 'A' in self.player_cards:
                 self.player_hand_value[self.player_hand_value.index(11)] = 1
             else:
+                self.state = self.GameStates.STOP_DRAWING
                 self.game_over = True
 
     def render(self):
@@ -96,14 +109,35 @@ class BlackJack():
                 print(self.value_art[card][1])
             print(f"    Your current hand is: {self.player_cards}")
 
-        else:
+        elif self.state == self.GameStates.STOP_DRAWING:
             for card in self.player_cards:
                 print(self.value_art[card][1])
             print(f"    Your final hand is: {self.player_cards}")
+            
+            if self.game_over:
+                print("You were too greedy. Game Over.")
+                print("DEALER WINS!")
+            else:
+                print(f"    Dealers final hand is: {self.dealer_cards}")
+                dealer = sum(self.dealer_hand_value)
+                player = sum(self.player_hand_value)
+                
+                if dealer > 21:
+                    print("Dealer went over 21...")
+                    print("PLAYER WINS!")
+                else:
+                    from time import sleep; sleep(2)
+                    print(f"DEALER score: {dealer}, PLAYER score: {player}")
 
-
-
-
+                    if dealer > player:
+                        print("DEALER WINS!")
+                    elif player > dealer:
+                        print("PLAYER WINS!")
+                    else:
+                        print("ITS A DRAW")
+                
+                self.game_over = True
+                
 
 if __name__ == "__main__":
     game = BlackJack()
