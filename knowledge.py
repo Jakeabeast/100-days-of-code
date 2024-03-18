@@ -338,7 +338,18 @@ cards[cards.index('A')] = 'K' #cards = ['K', 'A', '4', 'J', 'A'] run it again fo
 cards = list(map(lambda x: x.replace('A', 'K'), cards)) #cards = ['K', 'K', '4', 'J', 'K']
 
 
-#...
+#Create text ASCII art
 #Day12
+
+#========================================================
+
+#1 - CREATE TEXT ASCII ART
+
+#lets you type in message and can copy the art for use.
+#https://www.asciiart.eu/text-to-ascii-art 
     
+#========================================================
+
+#...
+#Day13
     
