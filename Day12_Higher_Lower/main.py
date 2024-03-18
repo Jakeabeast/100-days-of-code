@@ -35,11 +35,23 @@ if __name__ == "__main__":
     print(art.logo)
     remaining_guesses = choose_difficulty()
     target_number = randint(2,99) #between 1 - 100 (not including)
-
+    win = False
     while remaining_guesses > 0:
         print(f"You have {remaining_guesses} guesses remaining.")
         guess = guess_number()
-        print(f"You have guessed {guess}")
+        if guess < target_number:
+            print("Too low.")
+        elif guess > target_number:
+            print("Too high.")
+        else:
+            win = True
+            break
         remaining_guesses -= 1
+    
+    if win:
+        print("YOU GUESSED THE NUMBER!")
+    else:
+        print("Bad luck, you've run out of guesses.\n" + \
+             f"The correct number is {target_number}.")
 
-    print("Game Over!")
+
