@@ -7,7 +7,7 @@ A false guess with tell you whether you need to guess higher or lower to get the
 '''
 
 import art
-
+from random import randint
 
 def choose_difficulty():
     while True:
@@ -19,13 +19,27 @@ def choose_difficulty():
         else:
             print(f"{ans} is not a valid choice.")
 
+def guess_number():
+    while True:
+        try:                
+            ans = int(input("Guess a number between 1 - 100 >> "))
+            if ans > 1 and ans < 100:
+                return ans
+            else:
+                print("Must be between 1 - 100 (not including 1 or 100).")
+        except:
+            print("Please only enter an integer.")
+
 if __name__ == "__main__":
 
     print(art.logo)
     remaining_guesses = choose_difficulty()
-    while remaining_guesses > 0:
-        print(remaining_guesses)
+    target_number = randint(2,99) #between 1 - 100 (not including)
 
+    while remaining_guesses > 0:
+        print(f"You have {remaining_guesses} guesses remaining.")
+        guess = guess_number()
+        print(f"You have guessed {guess}")
         remaining_guesses -= 1
 
     print("Game Over!")
