@@ -38,7 +38,6 @@ if __name__ == "__main__":
 
         a_count, b_count = random_compare()
         option_a = player_input()
-        #Could probably put the code below in a function [def compare_answer(guess, a_count, b_count)]
         if option_a == None:
             alive = False
         elif a_count > b_count:
