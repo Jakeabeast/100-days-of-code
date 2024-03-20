@@ -39,6 +39,13 @@ randint(1,2) # 1 or 2
 
 #===============================================================
 
+#4 LIBRARY ALIASING
+
+import random as urmom
+urmom.randint(69)
+
+#===============================================================
+
 #Interpolation operator (string formatting)| Line shift and duplication | Manual fold | Rounding float
 #Day02
 #===============================================================
@@ -350,6 +357,32 @@ cards = list(map(lambda x: x.replace('A', 'K'), cards)) #cards = ['K', 'K', '4',
     
 #========================================================
 
-#...
+#Nothing
 #Day13
+
+#Correctly using import
+#Day14
+
+#========================================================
+
+#1 - CORRECTLY USING IMPORTS
+
+#According to most data, it's best to place all imports at top of files for an easy glance.
+#Imports can usually be sorted into 3 categories (Standard Library, Third Party, Local Application Modules)
+
+#Standard library imports
+import os 
+import time
+
+#Third party imports
+import flask
+import numpy
+
+#Local application imports
+import game_art
+
+#Another note is to generally not use [from _library_ import *], this can lead to reduced readability and cluttered namespace.
+
+#========================================================
+
     
