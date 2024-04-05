@@ -1,0 +1,9 @@
+Hi everyone, just texting to let anyone following along know that I've had a big break from the challenge.
+I wanted to get ahead of my uni work so I don't fall behind, after all uni is a higher priority.
+
+Additionally when I got back, I found todays challenge to be the same as Day 15 (coffee machine) but in an OOP style.
+Ironically, I already opted to use OOP instead of procedure on day 15... so yeah, I am a prophet and completed this challenge already.
+
+On the other hand, I decided to add some things I learnt into the knowledge folder over the week for fun.
+
+Anyway, hope you're doing well and hope to see you later on <3.

@@ -388,4 +388,72 @@ import game_art
 #Rushed
 #Day15
 
-#
+#Function Aliasing | Args and Kwargs | Assert keyword debugging | Loop with counter using enumerate
+#Day16
+
+#========================================================
+
+#1 - FUNCTION ALIASING AND DECORATORS (@)
+
+def f1(func):
+    def wrapper():
+        print("Started")
+        func()
+        print("Finished")
+    #return function wrapper as an object
+    return wrapper
+
+#@f1 #IM A DECORATOR **************** toggle me on/off ********************
+def random_function():
+    print("Do a thingo here")
+
+var_x = f1(random_function) #store function object in var_x
+print(var_x) #prints: <function f1.<locals>.wrapper at 0x00E4DF34>
+
+#var_x = f1(random_function)() | This will execute the function object (wrapper) with 0 arguments [Started\nDo a thingo here\nFinished]
+#var_x() == f1(random_function)()
+
+random_function()
+
+#========================================================
+
+#2 - UNKNOWN AMOUNT OF ARGUMENTS (ARGS AND KWARGS)
+
+def printer(*args, **kwargs):
+    print(args) #a tuple of args provided
+    print("----")
+    print(*args) #* is an -unpacking operator-
+    print("----")
+    print(kwargs)#a dict of keys and values
+    print("----")
+    for key, value in kwargs.items():
+        print(f"{key} == {value}")
+    print("*****************")
+
+printer('a', 'b', 'c')
+printer('yes', 'no')
+printer('a', 'b', 'c', d=1, e=2, f=3)
+
+#========================================================
+
+#3 - DEBUGGING WITH ASSERT KEYWORD
+
+x = 'Hi Dex'
+assert x == 'Hi Dex' #nothing will happen
+#assert x == 'Hi Jake' #raises a plain AssertionError, (like throwing an exception and breaking code)
+assert x == 'Hi Jake', "x should be 'Hi Dex'"
+
+#========================================================
+
+#4 - LOOP WITH COUNTER USING ENUMERATE
+
+iterable = ['a','b','c','d']
+for idx, item in enumerate(iterable):
+    pass
+
+#...
+#Day17
+
+#========================================================
+
+#1 - 
